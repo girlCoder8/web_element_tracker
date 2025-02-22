@@ -10,13 +10,17 @@ import time
 def main():
     # Apply custom styles
     apply_styles()
-    
+
     st.title("Web Element Locator Extractor")
     st.markdown("""
     Extract web element locators from any webpage. Enter a URL below to get:
     - IDs
     - Names
     - Data-testids
+    - Links & URLs
+    - Buttons
+    - Class Names
+    - Accessibility Attributes
     - CSS Selectors
     - XPath Locators
     """)
@@ -34,7 +38,7 @@ def main():
             # Extract locators with progress bar
             progress_bar = st.progress(0)
             locators = extract_locators(soup, progress_bar)
-            
+
             if not any(len(v) > 0 for v in locators.values()):
                 st.warning("No locators found on the specified webpage.")
                 return
@@ -60,7 +64,7 @@ def main():
 
             # Export options
             col1, col2 = st.columns(2)
-            
+
             with col1:
                 if st.button("Export to JSON"):
                     json_string = save_to_json(locators)
