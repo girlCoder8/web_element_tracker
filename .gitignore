@@ -1,0 +1,5 @@
+.streamlit
+.replit
+pyproject.toml
+replit.nix
+uv.lock

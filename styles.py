@@ -1,3 +1,5 @@
+# styles.py
+
 import streamlit as st
 
 def apply_styles():
